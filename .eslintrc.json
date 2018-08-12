@@ -2,7 +2,10 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "mocha": true,
+    "commonjs": false,
+    "amd": true
   },
   "parser": "babel-eslint",
   "extends": [
@@ -38,9 +41,20 @@
       // To allow Template Literals inside Component props.
       // ex. <Component width={`50%`}/>
       //
-      { "allowTemplateLiterals": true }
+      {
+        "allowTemplateLiterals": true
+      }
     ],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx",
+          ".js"
+        ]
+      }
+    ],
+    "import/no-unresolved": "off",
     // To allow absolute path imports in Meteor
     "import/no-absolute-path": [
       "off"
