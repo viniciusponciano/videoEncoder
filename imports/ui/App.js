@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import VideosListComponent from './videos/VideosList'
 import VideoUploaderComponent from './videos/VideoUploader'
 import VideoViewComponent from './videos/VideoView'
@@ -9,10 +10,13 @@ export default class App extends Component {
   render () {
     return (
       <div className="container">
-        <header>
-          <h1>Videos</h1>
-        </header>
-
+        <AppBar position="static" color="default">
+          <Toolbar>
+            <Typography variant="title" color="inherit">
+              Vídeos
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <VideoUploaderComponent/>
         <br/>
         <br/>

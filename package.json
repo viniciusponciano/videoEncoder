@@ -1,5 +1,5 @@
 {
-  "name": "VideoEncoder",
+  "name": "video_encoder",
   "private": true,
   "scripts": {
     "start": "meteor run",
@@ -9,19 +9,9 @@
     "lint": "eslint .",
     "pretest": "npm run lint --silent"
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "extends": [
-      "@meteorjs/eslint-config-meteor",
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ]
-  },
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",
+    "@material-ui/core": "^1.4.3",
     "meteor-node-stubs": "^0.4.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
