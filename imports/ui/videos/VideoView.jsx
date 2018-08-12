@@ -5,13 +5,13 @@ import { Videos } from '../../api/videos/Collection'
 class VideoViewComponent extends Component {
 
   render () {
-    return <div>{this.props.video.name || ''}</div>;
+    return <div>{this.props.video.name || ''}</div>
   }
 }
 
 export default withTracker(() => {
   const _id = '1234'
-  Meteor.subscribe('videos', _id);
+  Meteor.subscribe('videos', _id)
   return {
     video: Videos.findOne({ _id }) || {},
   }

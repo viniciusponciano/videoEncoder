@@ -26,7 +26,7 @@ export default class App extends Component {
         </ul>
         <br/>
         <br/>
-        <VideoViewComponent />
+        <VideoViewComponent/>
       </div>
     )
   }

@@ -14,23 +14,23 @@ export default class VideoUploaderComponent extends Component {
   }
 
   onChange = (event) => {
-    this.setState({video: event.target.value, enviando: false, salvo: false, erro: false})
+    this.setState({ video: event.target.value, enviando: false, salvo: false, erro: false })
   }
 
   enviarVideo = () => {
     if (this.state.video) {
-      this.setState({enviando: true, salvo: false, erro: false},
+      this.setState({ enviando: true, salvo: false, erro: false },
         () => {
-          Meteor.call('videos.insert', {name: this.state.video, createdAt: new Date()}, (err, res) => {
+          Meteor.call('videos.insert', { name: this.state.video, createdAt: new Date() }, (err, res) => {
             if (err || !res) {
-              this.setState({enviando: false, salvo: false, erro: true})
+              this.setState({ enviando: false, salvo: false, erro: true })
             } else {
-              this.setState({video: null, enviando: false, salvo: true, erro: false})
+              this.setState({ video: null, enviando: false, salvo: true, erro: false })
             }
           })
         })
     } else {
-      this.setState({enviando: false, salvo: false, erro: true})
+      this.setState({ enviando: false, salvo: false, erro: true })
     }
   }
 
