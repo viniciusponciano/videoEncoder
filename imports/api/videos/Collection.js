@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
+import fs from 'fs';
 
 const Videos = new Mongo.Collection('videos');
 
@@ -25,7 +26,16 @@ if (Meteor.isServer) {
       return Videos.find();
     },
     'videos.insert'(video) {
-      check(video, Object);
+      const type = {
+        lastModified: Number,
+        lastModifiedDate: Date,
+        name: String,
+        size: Number,
+        type: String,
+        webkitRelativePath: String,
+        arrayBuffer: Uint8Array,
+      };
+      check(video, type);
       return Videos.insert(video);
     },
     'videos.update' (video) {

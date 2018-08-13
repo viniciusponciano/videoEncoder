@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
-import Button from '@material-ui/core/Button';
+import { Button, Input } from '@material-ui/core';
 
 // VideoUploaderComponent - Represents the component that upload a video
 export default class VideoUploaderComponent extends Component {
@@ -14,9 +14,11 @@ export default class VideoUploaderComponent extends Component {
     };
   }
 
-  onChange = ({ target: value }) => {
+  onChange = (event, x) => {
+    event.preventDefault();
+    const { files } = event.target;
     this.setState({
-      video: value,
+      video: files[0],
       enviando: false,
       salvo: false,
       erro: false,
@@ -24,22 +26,44 @@ export default class VideoUploaderComponent extends Component {
   };
 
   enviarVideo = () => {
-    const { video, setState } = this.state;
+    const { video } = this.state;
     if (video) {
-      setState({ enviando: true, salvo: false, erro: false },
+      this.setState({ enviando: true, salvo: false, erro: false },
         () => {
-          Meteor.call('videos.insert', { name: video, createdAt: new Date() }, (err, res) => {
-            if (err || !res) {
-              setState({ enviando: false, salvo: false, erro: true });
-            } else {
-              setState({
-                video: null, enviando: false, salvo: true, erro: false,
+          const {
+            lastModified, lastModifiedDate, name, size, type, webkitRelativePath,
+          } = video;
+          const file = {
+            lastModified, lastModifiedDate, name, size, type, webkitRelativePath,
+          };
+          const oReq = new XMLHttpRequest();
+          oReq.open('GET', video, true);
+          oReq.responseType = 'arraybuffer';
+
+          oReq.onload = function (oEvent) {
+            const arrayBuffer = oReq.response; // Note: not oReq.responseText
+            if (arrayBuffer) {
+              file.arrayBuffer = new Uint8Array(arrayBuffer);
+              // const byteArray = new Uint8Array(arrayBuffer);
+              // for (let i = 0; i < byteArray.byteLength; i++) {
+              //   // do something with each byte in the array
+              // }
+              Meteor.call('videos.insert', file, (err, res) => {
+                if (err || !res) {
+                  this.setState({ enviando: false, salvo: false, erro: true });
+                } else {
+                  this.setState({
+                    video: null, enviando: false, salvo: true, erro: false,
+                  });
+                }
               });
             }
-          });
+          };
+
+          oReq.send(null);
         });
     } else {
-      setState({ enviando: false, salvo: false, erro: true });
+      this.setState({ enviando: false, salvo: false, erro: true });
     }
   };
 
@@ -52,7 +76,7 @@ export default class VideoUploaderComponent extends Component {
     } = this.state;
     return (
       <div>
-        <input type="file" onChange={this.onChange} value={video || ''} />
+        <Input type="file" onChange={this.onChange} />
         <Button variant="contained" color="primary" aria-label="Enviar vídeo" onClick={this.enviarVideo}>
           Enviar vídeo
         </Button>
