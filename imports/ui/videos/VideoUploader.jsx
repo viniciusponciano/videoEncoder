@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Meteor } from 'meteor/meteor';
 import { Button, Input } from '@material-ui/core';
+import { VideosFile } from '../../api/videos/Collection';
 
 // VideoUploaderComponent - Represents the component that upload a video
 export default class VideoUploaderComponent extends Component {
@@ -11,10 +11,11 @@ export default class VideoUploaderComponent extends Component {
       enviando: false,
       salvo: false,
       erro: false,
+      progresso: null,
     };
   }
 
-  onChange = (event, x) => {
+  onChange = (event) => {
     event.preventDefault();
     const { files } = event.target;
     this.setState({
@@ -22,46 +23,37 @@ export default class VideoUploaderComponent extends Component {
       enviando: false,
       salvo: false,
       erro: false,
+      progresso: null,
     });
   };
 
   enviarVideo = () => {
     const { video } = this.state;
     if (video) {
-      this.setState({ enviando: true, salvo: false, erro: false },
-        () => {
-          const {
-            lastModified, lastModifiedDate, name, size, type, webkitRelativePath,
-          } = video;
-          const file = {
-            lastModified, lastModifiedDate, name, size, type, webkitRelativePath,
-          };
-          const oReq = new XMLHttpRequest();
-          oReq.open('GET', video, true);
-          oReq.responseType = 'arraybuffer';
+      const self = this;
+      const uploadInstance = VideosFile.insert({
+        file: video,
+        streams: 'dynamic',
+        chunkSize: 'dynamic',
+      }, false);
 
-          oReq.onload = function (oEvent) {
-            const arrayBuffer = oReq.response; // Note: not oReq.responseText
-            if (arrayBuffer) {
-              file.arrayBuffer = new Uint8Array(arrayBuffer);
-              // const byteArray = new Uint8Array(arrayBuffer);
-              // for (let i = 0; i < byteArray.byteLength; i++) {
-              //   // do something with each byte in the array
-              // }
-              Meteor.call('videos.insert', file, (err, res) => {
-                if (err || !res) {
-                  this.setState({ enviando: false, salvo: false, erro: true });
-                } else {
-                  this.setState({
-                    video: null, enviando: false, salvo: true, erro: false,
-                  });
-                }
-              });
-            }
-          };
+      uploadInstance.on('start', function() {
+        self.setState({ enviando: true, salvo: false, erro: false, progresso: 0 });
+      });
 
-          oReq.send(null);
-        });
+      uploadInstance.on('progress', function(progresso) {
+        self.setState({ progresso });
+      });
+
+      uploadInstance.on('end', function(error) {
+        if (error) {
+          self.setState({ enviando: false, salvo: false, erro: true, progresso: null });
+        } else {
+          self.setState({ enviando: false, salvo: true, erro: false, progresso: 100 });
+        }
+      });
+
+      uploadInstance.start();
     } else {
       this.setState({ enviando: false, salvo: false, erro: true });
     }
@@ -73,10 +65,11 @@ export default class VideoUploaderComponent extends Component {
       enviando,
       salvo,
       erro,
+      progresso,
     } = this.state;
     return (
       <div>
-        <Input type="file" onChange={this.onChange} />
+        <Input type="file" accept="video/*" onChange={this.onChange} />
         <Button variant="contained" color="primary" aria-label="Enviar vídeo" onClick={this.enviarVideo}>
           Enviar vídeo
         </Button>
@@ -88,6 +81,7 @@ export default class VideoUploaderComponent extends Component {
             {video ? 'Erro ao enviar vídeo' : 'Selecione um vídeo para envio'}
           </span>
         )}
+        {progresso && ` - ${progresso}%`}
       </div>
     );
   }
