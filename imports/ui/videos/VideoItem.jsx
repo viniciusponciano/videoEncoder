@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { ListItem } from '@material-ui/core';
+import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http';
-import { Videos } from '../../api/videos/Collection';
 
 // VideoItemComponent - Represents the component that is a video item
 export default class VideoItemComponent extends Component {
   constructor(props) {
     super(props);
     this.state = { progresso: {} };
+    this.interval = [];
   }
 
   componentDidMount() {
-    Meteor.setInterval(this.obterProgresso, 1000);
+    this.interval.push(Meteor.setInterval(this.obterProgresso, 3000));
+  }
+
+  componentWillUpdate({ video }) {
+    const { id } = this.props.video.meta;
+    if (video.meta.id !== id) {
+      this.interval.push(Meteor.setInterval(this.obterProgresso, 1000));
+    }
   }
 
   obterProgresso = () => {
@@ -24,17 +32,17 @@ export default class VideoItemComponent extends Component {
       },
     };
     const self = this;
-    const callback = (err, progresso) => {
+    const callback = (err, res) => {
       if (err) {
-        console.log(err);
+        console.log('Progress resquest err: ', err);
       }
+      const progresso = res.data;
       self.setState({ progresso });
       if (progresso.state === 'finished') {
-        const { _id } = video;
-        const videoAtualizado = { ...video };
+        const videoAtualizado = video;
         videoAtualizado.meta.progresso = progresso;
-        delete videoAtualizado._id;
-        Videos.update({ _id }, videoAtualizado);
+        Meteor.call('videos.update', videoAtualizado);
+        self.interval.forEach(interval => Meteor.clearInterval(interval));
       }
     };
     if (video.meta.id) {
@@ -51,7 +59,8 @@ export default class VideoItemComponent extends Component {
         key={video._id}
         id={video._id}
         onClick={() => onClick(video)}
-        disabled={!['finished'].includes(progresso.state) || !video.meta.progresso}
+        disabled={progresso.state !== 'finished'
+        || !(video.meta.progresso && video.meta.progresso.state === 'finished')}
       >
         {video.name}
         {' '}
