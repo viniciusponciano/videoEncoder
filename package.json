@@ -7,7 +7,8 @@
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
     "lint": "eslint .",
-    "pretest": "npm run lint --silent"
+    "pretest": "npm run lint --silent",
+    "deploy": "cd .deploy && mup deploy --verbose && cd .."
   },
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",

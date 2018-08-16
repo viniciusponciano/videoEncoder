@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2629882e-8eb3-4e60-bbb5-ddeac5191da9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.meteor/packages" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.meteor/versions" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/versions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/api/videos/Collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/api/videos/Collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/ui/videos/VideoUploader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/videos/VideoUploader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/videos/VideoView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/videos/VideoView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/videos/VideosList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/videos/VideosList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +33,10 @@
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -34,11 +44,11 @@
           <entry key="css" value="2" />
           <entry key="eslintrc" value="1" />
           <entry key="exclude" value="1" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="html" value="2" />
-          <entry key="js" value="30" />
-          <entry key="json" value="8" />
-          <entry key="jsx" value="10" />
+          <entry key="js" value="46" />
+          <entry key="json" value="10" />
+          <entry key="jsx" value="13" />
           <entry key="log" value="1" />
           <entry key="ts" value="2" />
         </counts>
@@ -47,10 +57,11 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="Git exclude file" value="1" />
+          <entry key="Git file" value="1" />
           <entry key="HTML" value="2" />
-          <entry key="JSON" value="9" />
-          <entry key="JSX Harmony" value="10" />
-          <entry key="JavaScript" value="28" />
+          <entry key="JSON" value="11" />
+          <entry key="JSX Harmony" value="13" />
+          <entry key="JavaScript" value="44" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="2" />
         </counts>
@@ -61,25 +72,25 @@
           <entry key="eslintrc" value="11" />
           <entry key="gitignore" value="10" />
           <entry key="html" value="42" />
-          <entry key="js" value="1785" />
-          <entry key="json" value="180" />
-          <entry key="jsx" value="2797" />
-          <entry key="txt" value="143" />
+          <entry key="js" value="2119" />
+          <entry key="json" value="247" />
+          <entry key="jsx" value="5113" />
+          <entry key="txt" value="179" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="88" />
           <entry key="HTML" value="42" />
-          <entry key="JSON" value="191" />
-          <entry key="JSX Harmony" value="2797" />
-          <entry key="JavaScript" value="1445" />
-          <entry key="PLAIN_TEXT" value="493" />
+          <entry key="JSON" value="258" />
+          <entry key="JSX Harmony" value="5113" />
+          <entry key="JavaScript" value="1779" />
+          <entry key="PLAIN_TEXT" value="529" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="4" />
+          <entry key="ESLintLanguageService" value="7" />
           <entry key="StandardJSService" value="1" />
           <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
@@ -88,11 +99,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoUploader.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+            <state relative-caret-position="128">
+              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -100,13 +111,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/api/videos/Collection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="180">
+              <caret line="12" column="57" lean-forward="true" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#81#118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideosList.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,28 +156,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoView.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideosList.jsx">
+        <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="7" />
+            <state relative-caret-position="285">
+              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,6 +188,7 @@
       <find>collection</find>
       <find>Videos</find>
       <find>fs</find>
+      <find>link</find>
     </findStrings>
     <replaceStrings>
       <replace>Collection</replace>
@@ -175,21 +208,22 @@
         <option value="$PROJECT_DIR$/.eslintrc" />
         <option value="$PROJECT_DIR$/imports/api/videos/collections.js" />
         <option value="$PROJECT_DIR$/imports/api/videos/Components/VideosList.jsx" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/imports/api/videos/collection.js" />
-        <option value="$PROJECT_DIR$/server/main.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/client/main.js" />
         <option value="$PROJECT_DIR$/client/main.html" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
         <option value="$PROJECT_DIR$/tests/main.js" />
+        <option value="$PROJECT_DIR$/server/main.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.deploy/mup.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/imports/ui/App.js" />
-        <option value="$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx" />
         <option value="$PROJECT_DIR$/imports/ui/videos/VideoView.jsx" />
+        <option value="$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx" />
         <option value="$PROJECT_DIR$/imports/ui/videos/VideosList.jsx" />
-        <option value="$PROJECT_DIR$/imports/api/videos/Collection.js" />
         <option value="$PROJECT_DIR$/imports/ui/videos/VideoUploader.jsx" />
+        <option value="$PROJECT_DIR$/imports/api/videos/Collection.js" />
       </list>
     </option>
   </component>
@@ -226,13 +260,55 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="VideoEncoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoEncoder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VideoEncoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoEncoder" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VideoEncoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoEncoder" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VideoEncoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoEncoder" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VideoEncoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoEncoder" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VideoEncoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoEncoder" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.meteor/local/build/programs/server/debug.js" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.8.0" />
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
@@ -240,19 +316,22 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.path.for.package.eslint" value="$USER_HOME$/n/bin/node" />
+    <property name="node.js.path.for.package.eslint" value="node" />
     <property name="node.js.path.for.package.jscs" value="project" />
-    <property name="node.js.path.for.package.standard" value="$USER_HOME$/n/bin/node" />
+    <property name="node.js.path.for.package.standard" value="node" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.deploy" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/imports/ui/videos" />
       <recent name="$PROJECT_DIR$/imports/ui" />
@@ -272,13 +351,23 @@
     </option>
   </component>
   <component name="RunManager" selected="Meteor.Meteor">
+    <configuration name="Deploy" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="node" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="lint" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="lint" />
       </scripts>
-      <node-interpreter value="$USER_HOME$/n/bin/node" />
+      <node-interpreter value="node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -308,6 +397,7 @@
     </configuration>
     <list>
       <item itemvalue="Meteor.Meteor" />
+      <item itemvalue="npm.Deploy" />
       <item itemvalue="npm.lint" />
     </list>
     <recent_temporary>
@@ -329,7 +419,10 @@
       <workItem from="1534001964980" duration="12860000" />
       <workItem from="1534020397195" duration="7588000" />
       <workItem from="1534078170677" duration="13360000" />
-      <workItem from="1534195896059" duration="11951000" />
+      <workItem from="1534195896059" duration="13259000" />
+      <workItem from="1534287506851" duration="11497000" />
+      <workItem from="1534339218708" duration="18282000" />
+      <workItem from="1534380876250" duration="4781000" />
     </task>
     <task id="LOCAL-00001" summary="Added material-ui dependency">
       <created>1534032884809</created>
@@ -359,32 +452,39 @@
       <option name="project" value="LOCAL" />
       <updated>1534120617913</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Upload File can upload large file to filesystem">
+      <created>1534208063787</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534208063787</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46114000" />
+    <option name="totallyTimeSpent" value="81982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24199553" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24199553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4996277" visible="true" weight="0.32792208" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4981385" weight="0.32792208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39772728" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5018615" side_tool="true" weight="0.32901135" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4981385" weight="0.32954547" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5026061" side_tool="true" weight="0.32954547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4973939" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -401,7 +501,8 @@
     <MESSAGE value="Video item component created" />
     <MESSAGE value="Code style fixed with ESLint - all passed" />
     <MESSAGE value="Upload File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload File" />
+    <MESSAGE value="Upload File can upload large file to filesystem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload File can upload large file to filesystem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,6 +518,36 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>Meteor.EnvironmentVariable.get()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Meteor.EnvironmentVariable</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Meteor.EnvironmentVariable.scope</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Meteor.EnvironmentVariable.Mongo</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Meteor</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Meteor.EnviromentVariables</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>fs</expression-string>
         <language-id>JavaScript</language-id>
@@ -435,13 +566,6 @@
     <entry file="file://$PROJECT_DIR$/imports/ui/Task.js" />
     <entry file="file://$PROJECT_DIR$/.git/info/exclude">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/videos/collection.js" />
     <entry file="file://$PROJECT_DIR$/npm-debug.log" />
@@ -462,38 +586,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -504,16 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.eslintrc.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -521,26 +607,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoView.jsx">
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Input/Input.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        <state relative-caret-position="814">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideosList.jsx">
+    <entry file="file://$PROJECT_DIR$/.deploy/settings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.deploy/mup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        <state relative-caret-position="180">
+          <caret line="39" column="74" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/videos/Collection.js">
+    <entry file="file://$PROJECT_DIR$/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/node_modules/mup-aws-beanstalk/node_modules/aws-sdk/lib/http/node.js" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -552,19 +673,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Input/Input.d.ts">
+    <entry file="file://$USER_HOME$/.meteor/packages/ostrio_files/1.10.1/web.browser/core.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        <state relative-caret-position="121">
+          <caret line="211" column="2" selection-start-line="211" selection-start-column="2" selection-end-line="211" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideosList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoView.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/videos/VideoUploader.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        <state relative-caret-position="128">
+          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/videos/Collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="57" lean-forward="true" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+          <folding>
+            <element signature="e#81#118#0" expanded="true" />
           </folding>
         </state>
       </provider>

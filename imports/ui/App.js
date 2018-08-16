@@ -2,7 +2,6 @@ import React from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import VideosListComponent from './videos/VideosList';
 import VideoUploaderComponent from './videos/VideoUploader';
-import VideoViewComponent from './videos/VideoView';
 
 // App component - represents the whole app
 export default function App() {
@@ -22,9 +21,6 @@ export default function App() {
       <ul>
         <VideosListComponent />
       </ul>
-      <br />
-      <br />
-      <VideoViewComponent />
     </div>
   );
 }
