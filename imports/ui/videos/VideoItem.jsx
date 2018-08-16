@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ListItem } from '@material-ui/core';
 import { HTTP } from 'meteor/http';
+import { Videos } from '../../api/videos/Collection';
 
 // VideoItemComponent - Represents the component that is a video item
 export default class VideoItemComponent extends Component {
@@ -28,6 +29,13 @@ export default class VideoItemComponent extends Component {
         console.log(err);
       }
       self.setState({ progresso });
+      if (progresso.state === 'finished') {
+        const { _id } = video;
+        const videoAtualizado = { ...video };
+        videoAtualizado.meta.progresso = progresso;
+        delete videoAtualizado._id;
+        Videos.update({ _id }, videoAtualizado);
+      }
     };
     if (video.meta.id) {
       HTTP.get(url, options, callback);
@@ -43,7 +51,7 @@ export default class VideoItemComponent extends Component {
         key={video._id}
         id={video._id}
         onClick={() => onClick(video)}
-        disabled={!['finished'].includes(progresso.state)}
+        disabled={!['finished'].includes(progresso.state) || !video.meta.progresso}
       >
         {video.name}
         {' '}
