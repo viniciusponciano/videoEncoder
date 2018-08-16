@@ -79,9 +79,7 @@ class VideoUploaderComponent extends Component {
       <div>
         <Input
           type="file"
-          inputProps={{ accept: 'video/animaflex,video/x-ms-asf,video/x-ms-asf,video/x-ms-asf-plugin,video/avi,video/msvideo,video/x-msvideo,video/avs-video,video/x-dv,video/dl,video/x-dl,video/x-dv,video/fli,video/x-fli,video/x-atomic3d-feature,video/gl,video/x-gl,video/x-isvideo,video/mpeg,video/mpeg,video/x-motion-jpeg,video/quicktime,video/quicktime,video/x-sgi-movie,video/mpeg,video/x-mpeg,video/x-mpeq2a,video/mpeg,video/x-mpeg,video/mpeg,video/mpeg,video/mpeg,video/mpeg,video/x-sgi-movie,video/quicktime,video/x-qtc,video/vnd.rn-realvideo,video/x-scm,video/vdo,video/vivo,video/vnd.vivo,video/vivo,video/vnd.vivo,video/vosaic,video/x-amt-demorun,video/x-amt-showrun,video/*' }}
           onChange={this.onChange}
-          fullWidth
         />
         <Button variant="contained" color="primary" aria-label="Enviar vídeo" onClick={this.enviarVideo}>
           Enviar vídeo
