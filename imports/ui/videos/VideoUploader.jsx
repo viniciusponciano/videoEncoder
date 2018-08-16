@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Meteor } from "meteor/meteor";
-import { HTTP } from 'meteor/http';
+import { Meteor } from 'meteor/meteor';
 import { Button, Input } from '@material-ui/core';
 import { VideosFile } from '../../api/videos/Collection';
 
@@ -50,7 +49,7 @@ class VideoUploaderComponent extends Component {
         self.setState({ progresso });
       });
 
-      uploadInstance.on('end', function(error, fileInserted) {
+      uploadInstance.on('end', function(error) {
         if (error) {
           self.setState({
             enviando: false, salvo: false, erro: true, progresso: null,
@@ -58,52 +57,6 @@ class VideoUploaderComponent extends Component {
         } else {
           self.setState({
             enviando: false, salvo: true, erro: false, progresso: 100,
-          }, () => {
-            Meteor.subscribe('videosFile');
-            const vid = VideosFile.findOne({ _id: fileInserted._id });
-            const url = 'https://app.zencoder.com/api/v2/jobs';
-            const options = {
-              headers: {
-                'Content-Type': 'application/json',
-                'Zencoder-Api-Key': 'd6fdd6158a1cccfd687a9482cab89e5f',
-              },
-              data: // HTML5 video. Outputs include a high quality mp4, WebM, OGG and a lower quality
-              // mp4.
-                {
-                  input: vid.link(),
-                  outputs: [
-                    // {
-                    //   label: 'mp4 high',
-                    //   // Change this to your server: "url": "s3://output-bucket/output-file-name.mp4",
-                    //   h264_profile: 'high',
-                    // },
-                    // {
-                    //   // Change this to your server: "url": "s3://output-bucket/output-file-name.webm",
-                    //   label: 'webm',
-                    //   format: 'webm',
-                    // },
-                    // {
-                    //   // Change this to your server: "url": "s3://output-bucket/output-file-name.ogg",
-                    //   label: 'ogg',
-                    //   format: 'ogg',
-                    // },
-                    {
-                      // Change this to your server: "url": "s3://output-bucket/output-file-name-mobile.mp4",
-                      label: 'mp4 low',
-                      size: '640x480',
-                    },
-                  ],
-                },
-
-            };
-            const callback = (err, res) => {
-              if (err) {
-                console.log(err);
-              }
-              fileInserted.meta = res.data.outputs[0];
-              Meteor.call('videos.update', fileInserted);
-            };
-            HTTP.post(url, options, callback);
           });
         }
       });

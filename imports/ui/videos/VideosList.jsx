@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Dialog, DialogTitle, List } from '@material-ui/core';
-import { VideosFile } from '../../api/videos/Collection';
+import { Videos } from '../../api/videos/Collection';
 import VideoItemComponent from './VideoItem';
 import VideoViewComponent from './VideoView';
 
@@ -38,8 +38,8 @@ class VideosListComponent extends Component {
 }
 
 export default withTracker(() => {
-  Meteor.subscribe('videosFile');
+  Meteor.subscribe('videos');
   return {
-    videos: VideosFile.find({}).fetch(),
+    videos: Videos.find({}).fetch(),
   };
 })(VideosListComponent);

@@ -5,7 +5,7 @@ import React from 'react';
 
 // VideoViewComponent - Represents the component that play a video
 export default function VideoViewComponent({ video }) {
-  video = video ? video : { link: () => {}, meta: {}};
+  video = video ? video : { link: () => {}, meta: {} };
   return (
     <video controls>
       <source src={video.link()} type={video.type} />

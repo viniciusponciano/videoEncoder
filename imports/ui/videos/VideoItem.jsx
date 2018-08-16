@@ -6,16 +6,15 @@ import { HTTP } from 'meteor/http';
 export default class VideoItemComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { progresso: {}, chamadas: 0 };
+    this.state = { progresso: {} };
   }
 
   componentDidMount() {
-    this.obterProgresso();
+    Meteor.setInterval(this.obterProgresso, 1000);
   }
 
   obterProgresso = () => {
     const { video } = this.props;
-    let { chamadas } = this.state;
     const url = `https://app.zencoder.com/api/v2/outputs/${video.meta.id}/progress`;
     const options = {
       headers: {
@@ -28,10 +27,9 @@ export default class VideoItemComponent extends Component {
       if (err) {
         console.log(err);
       }
-      chamadas++;
-      self.setState({ progresso, chamadas });
+      self.setState({ progresso });
     };
-    if (video.meta.id && chamadas < 1000) {
+    if (video.meta.id) {
       HTTP.get(url, options, callback);
     }
   };
@@ -39,41 +37,32 @@ export default class VideoItemComponent extends Component {
   render() {
     const { video, onClick } = this.props;
     const { progresso } = this.state;
-    if (progresso && ['failed', 'cancelled', 'finished'].includes(progresso.state)) {
-      return (
-        <ListItem
-          button
-          key={video._id}
-          id={video._id}
-          onClick={() => onClick(video)}
-          disabled={['failed', 'cancelled'].includes(progresso.state)}
-        >
-          {video.name}
-        </ListItem>
-      );
-    }
-    this.obterProgresso();
     return (
       <ListItem
         button
         key={video._id}
         id={video._id}
         onClick={() => onClick(video)}
-        disabled
+        disabled={!['finished'].includes(progresso.state)}
       >
         {video.name}
         {' '}
+        {progresso.state
+          && (
+            <span>
 -
-        {progresso.current_event}
-        {' '}
+              {progresso.current_event}
+              {' '}
 -
-        {progresso.current_event_progress}
+              {progresso.current_event_progress}
 %
-        {progresso.state}
-        {' '}
+              {progresso.state}
+              {' '}
 -
-        {progresso.progress}
+              {progresso.progress}
 %
+            </span>
+          )}
       </ListItem>
     );
   }
