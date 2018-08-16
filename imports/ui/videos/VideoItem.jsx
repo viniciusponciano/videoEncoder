@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListItem } from '@material-ui/core';
+import { ListItem, Icon } from '@material-ui/core';
 import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http';
 
@@ -80,6 +80,9 @@ export default class VideoItemComponent extends Component {
 %
             </span>
           )}
+        {(progresso.state === 'finished'
+        || (video.meta.progresso && video.meta.progresso.state === 'finished'))
+        && <Icon className="fa fa-play" />}
       </ListItem>
     );
   }
