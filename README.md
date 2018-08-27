@@ -30,7 +30,7 @@ Para realizar o deploy é preciso executar os seguintes comandos:
  **_`meteor`_**
  
  
- Na primeira execução pode ser necessário a que  seguintes  comandos sejam realizados:
+ Na primeira execução pode ser necessário que os seguintes comandos sejam realizados:
  
  
  **_`meteor install`_**
