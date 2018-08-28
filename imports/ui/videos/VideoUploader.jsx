@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import { Button, Input } from '@material-ui/core';
+import {
+  Button,
+  Input,
+  Grid,
+  Typography,
+  FormHelperText,
+} from '@material-ui/core';
 import { VideosFile } from '../../api/videos/Collection';
 
 // VideoUploaderComponent - Represents the component that upload a video
@@ -39,17 +45,17 @@ class VideoUploaderComponent extends Component {
         chunkSize: 'dynamic',
       }, false);
 
-      uploadInstance.on('start', function() {
+      uploadInstance.on('start', function () {
         self.setState({
           enviando: true, salvo: false, erro: false, progresso: 0,
         });
       });
 
-      uploadInstance.on('progress', function(progresso) {
+      uploadInstance.on('progress', function (progresso) {
         self.setState({ progresso });
       });
 
-      uploadInstance.on('end', function(error) {
+      uploadInstance.on('end', function (error) {
         if (error) {
           self.setState({
             enviando: false, salvo: false, erro: true, progresso: null,
@@ -76,24 +82,42 @@ class VideoUploaderComponent extends Component {
       progresso,
     } = this.state;
     return (
-      <div>
-        <Input
-          type="file"
-          onChange={this.onChange}
-        />
-        <Button variant="contained" color="primary" aria-label="Enviar vídeo" onClick={this.enviarVideo}>
-          Enviar vídeo
-        </Button>
-        {enviando && 'Enviando vídeo'}
-        {salvo && 'Vídeo salvo'}
-        {erro
-        && (
-          <span>
-            {video ? 'Erro ao enviar vídeo' : 'Selecione um vídeo para envio'}
-          </span>
-        )}
-        {progresso && ` - ${progresso}%`}
-      </div>
+      <Grid container style={{ overflowWrap: 'break-word', padding: '50px' }}>
+        <Grid item xs={10}>
+          <Input
+            type="file"
+            onChange={this.onChange}
+            fullWidth
+            error={erro}
+          />
+          <FormHelperText>
+            <Typography variant="subheading" color="primary" style={{ marginLeft: '10px' }}>
+              {enviando && 'Enviando vídeo'}
+              {salvo && 'Vídeo salvo'}
+              {erro
+              && (
+                <Typography variant="subheading" color="error">
+                  {video ? 'Erro ao enviar vídeo' : 'Selecione um vídeo para envio'}
+                </Typography>
+              )}
+              {progresso && (
+                <div>
+                  Progresso:
+                  <span style={{ marginLeft: '5px' }}>
+                    {progresso}
+                    %
+                  </span>
+                </div>
+              )}
+            </Typography>
+          </FormHelperText>
+        </Grid>
+        <Grid item xs={2}>
+          <Button variant="contained" color="primary" aria-label="Enviar vídeo" onClick={this.enviarVideo}>
+            Enviar vídeo
+          </Button>
+        </Grid>
+      </Grid>
     );
   }
 }

@@ -10,12 +10,7 @@ const style = {
 };
 
 // VideoItemComponent - Represents the component that is a video item
-export default class VideoItemComponent extends Component {
-  propTypes = {
-    video: PropTypes.instanceOf(Object),
-    onClick: PropTypes.func,
-  }
-
+export class VideoItemComponent extends Component {
   constructor (props) {
     super(props);
     this.state = { progresso: {} };
@@ -23,7 +18,7 @@ export default class VideoItemComponent extends Component {
   }
 
   componentDidMount () {
-    this.interval.push(Meteor.setInterval(this.obterProgresso, 3000));
+    this.interval.push(Meteor.setInterval(this.obterProgresso, 1000));
   }
 
   componentWillUpdate ({ video }) {
@@ -80,17 +75,17 @@ export default class VideoItemComponent extends Component {
         onClick={() => onClick(video)}
         disabled={isDisable}
       >
-        <Grid container sm="auto" style={{ overflowWrap: 'break-word' }}>
+        <Grid container style={{ overflowWrap: 'break-word' }}>
           <Grid item xs={5}>
             {video.name}
           </Grid>
           <Grid item xs={6}>
             {state
             && (
-              <Grid container sm="auto">
-                <Grid container sm="auto">
+              <Grid container>
+                <Grid container>
                   {currentEvent && (
-                    <Grid item sm="6">
+                    <Grid item sm={6}>
                       Evento:
                       <span style={style.span}>
                         {currentEvent}
@@ -98,7 +93,7 @@ export default class VideoItemComponent extends Component {
                     </Grid>
                   )}
                   {currentEventProgress && (
-                    <Grid item sm="6">
+                    <Grid item sm={6}>
                       Progresso do Evento:
                       <span style={style.span}>
                         {currentEventProgress}
@@ -107,15 +102,15 @@ export default class VideoItemComponent extends Component {
                     </Grid>
                   )}
                 </Grid>
-                <Grid container sm="auto">
-                  <Grid item sm="6">
+                <Grid container>
+                  <Grid item sm={6}>
                     Situação:
                     <span style={style.span}>
                       {state}
                     </span>
                   </Grid>
                   {progress && (
-                    <Grid item sm="6">
+                    <Grid item sm={6}>
                       Progresso: $
                       <span style={style.span}>
                         {progress}
@@ -138,3 +133,10 @@ export default class VideoItemComponent extends Component {
     );
   }
 }
+
+VideoItemComponent.propTypes = {
+  video: PropTypes.instanceOf(Object).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+export default VideoItemComponent;
