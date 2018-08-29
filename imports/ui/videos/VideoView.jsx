@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import { Videos, VideosFile } from '../../api/videos/Collection';
+import { VideosConverted, VideosFileConverted } from '../../api/videos/Collection';
 
 export class VideoViewComponent extends Component {
   propTypes = {
@@ -13,8 +13,9 @@ export class VideoViewComponent extends Component {
   constructor(props) {
     super(props);
     const { video } = props;
-    video.url = VideosFile.link(video);
+    video.url = VideosFileConverted.link(video);
     this.state = { video };
+    console.log('VideoToView', video);
   }
 
   onError = () => {
@@ -35,8 +36,8 @@ export class VideoViewComponent extends Component {
 }
 
 export default withTracker(({ videoId }) => {
-  Meteor.subscribe('videos', videoId);
+  Meteor.subscribe('videosConverted', videoId);
   return {
-    video: Videos.find({}).fetch(),
+    video: VideosConverted.find({}).fetch(),
   };
 })(VideoViewComponent);

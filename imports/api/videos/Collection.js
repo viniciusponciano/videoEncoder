@@ -5,18 +5,26 @@ import { FilesCollection } from 'meteor/ostrio:files';
 import { HTTP } from 'meteor/http';
 
 export const Videos = new Mongo.Collection('videos');
+export const VideosConverted = new Mongo.Collection('videosConverted');
 export const VideosFile = new FilesCollection({
   collectionName: 'videosFile',
   collection: Videos,
 });
+export const VideosFileConverted = new FilesCollection({
+  collectionName: 'videosFileConverted',
+  collection: VideosConverted,
+});
 if (Meteor.isServer) {
   VideosFile.storagePath = () => `${process.env.HOME}/Uploaded`;
+  VideosFileConverted.storagePath = () => `${process.env.HOME}/Converted`;
 
   VideosFile.allowClient();
 
   VideosFile.onBeforeUpload = () => true;
+  VideosFileConverted.onBeforeUpload = () => true;
 
   VideosFile.onInitiateUpload = () => true;
+  VideosFileConverted.onInitiateUpload = () => true;
 
   VideosFile.onAfterUpload = (fileInserted) => {
     const input = VideosFile.link(fileInserted);
@@ -86,6 +94,14 @@ if (Meteor.isServer) {
     return Videos.find();
   });
 
+  Meteor.publish('videosConverted', function (_id) {
+    if (_id) {
+      return VideosConverted.find({ _id });
+    }
+    check(_id, undefined);
+    return VideosConverted.find();
+  });
+
   Meteor.methods({
     'videos.find' (_id) {
       if (_id) {
@@ -125,9 +141,8 @@ if (Meteor.isServer) {
           },
           meta: { isConvertedFile: true },
         };
-        VideosFile.storagePath = () => `${process.env.HOME}/Converted`;
 
-        VideosFile
+        VideosFileConverted
           .load(
             videoToUpdate.meta.url,
             options,
