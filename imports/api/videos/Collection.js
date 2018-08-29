@@ -31,11 +31,11 @@ if (Meteor.isServer) {
         {
           input,
           outputs: [
-            // {
-            //   label: 'mp4 high',
-            //   // Change this to your server: "url": "s3://output-bucket/output-file-name.mp4",
-            //   h264_profile: 'high',
-            // },
+            {
+              // Change this to your server: "url": "s3://output-bucket/output-file-name.mp4",
+              label: 'mp4 high',
+              h264_profile: 'high',
+            },
             // {
             //   // Change this to your server: "url": "s3://output-bucket/output-file-name.webm",
             //   label: 'webm',
@@ -46,11 +46,11 @@ if (Meteor.isServer) {
             //   label: 'ogg',
             //   format: 'ogg',
             // },
-            {
-              // Change this to your server: "url": "s3://output-bucket/output-file-name-mobile.mp4",
-              label: 'mp4 low',
-              size: '640x480',
-            },
+            // {
+            //   // Change this to your server: "url": "s3://output-bucket/output-file-name-mobile.mp4",
+            //   label: 'mp4 low',
+            //   size: '640x480',
+            // },
           ],
         },
 
@@ -72,7 +72,7 @@ if (Meteor.isServer) {
 
   Meteor.publish('videosFile', function (_id) {
     if (_id) {
-      return VideosFile.findOne({ _id });
+      return VideosFile.find({ _id }).cursor;
     }
     check(_id, undefined);
     return VideosFile.find().cursor;
@@ -80,7 +80,7 @@ if (Meteor.isServer) {
 
   Meteor.publish('videos', function (_id) {
     if (_id) {
-      return Videos.findOne({ _id });
+      return Videos.find({ _id });
     }
     check(_id, undefined);
     return Videos.find();
@@ -89,7 +89,7 @@ if (Meteor.isServer) {
   Meteor.methods({
     'videos.find' (_id) {
       if (_id) {
-        return Videos.findOne({ _id });
+        return Videos.find({ _id }).cursor;
       }
       check(_id, undefined);
       return Videos.find().cursor;
@@ -112,7 +112,37 @@ if (Meteor.isServer) {
       const { _id } = video;
       const videoToUpdate = video;
       delete videoToUpdate._id;
-      return VideosFile.update({ _id }, videoToUpdate);
+
+      if (videoToUpdate.meta.convertedId) {
+        return VideosFile.update({ _id }, videoToUpdate);
+      }
+      return new Promise((resolve, reject) => {
+        const proceedAfterUpload = false;
+        const options = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Zencoder-Api-Key': 'd6fdd6158a1cccfd687a9482cab89e5f',
+          },
+          meta: { isConvertedFile: true },
+        };
+        VideosFile.storagePath = () => `${process.env.HOME}/Converted`;
+
+        VideosFile
+          .load(
+            videoToUpdate.meta.url,
+            options,
+            (err, res) => {
+              if (err) {
+                reject(err);
+              } else {
+                videoToUpdate.meta.convertedId = res._id;
+                // VideosFile.storagePath = () => `${process.env.HOME}/Uploaded`;
+                resolve(VideosFile.update({ _id }, videoToUpdate));
+              }
+            },
+            proceedAfterUpload,
+          );
+      });
     },
     'videos.remove' ({ _id }) {
       check(_id, String);

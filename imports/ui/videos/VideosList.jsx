@@ -46,7 +46,10 @@ class VideosListComponent extends Component {
           <DialogTitle>
             {play ? play.name : ''}
           </DialogTitle>
-          <VideoViewComponent video={play} onError={this.onError} />
+          <VideoViewComponent
+            videoId={play && play.meta ? play.meta.convertedId : null}
+            onError={this.onError}
+          />
         </Dialog>
         <Snackbar
           open={!play.hasOwnProperty('name') && !!errorTxt}
@@ -67,6 +70,6 @@ VideosListComponent.propTypes = {
 export default withTracker(() => {
   Meteor.subscribe('videos');
   return {
-    videos: Videos.find({}).fetch(),
+    videos: Videos.find({ 'meta.isConvertedFile': { $exists: false } }).fetch(),
   };
 })(VideosListComponent);
